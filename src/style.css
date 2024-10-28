@@ -294,8 +294,8 @@ h4 {
 }
 
 .project a {
-    background-color: #f00; /* Red background for link button */
-    color: #fff; /* White text */
+    background-color: #f00;
+    color: #fff;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -303,7 +303,7 @@ h4 {
     display: inline-block;
 }
 
-.project a:hover {
+.projects a:hover {
     background-color: #cc0000;
 }
 

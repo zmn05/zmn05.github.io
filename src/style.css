@@ -34,7 +34,7 @@ header nav ul {
 
 header nav ul li {
     font-size: 18px;
-    margin: 0 50px 0 50px; 
+    margin: 0 50px 0 50px;
 }
 
 header nav ul li a {
@@ -247,16 +247,79 @@ h4 {
     line-height: 1.6;
 }
 
+/* Projects Section */
+#projects {
+    margin-top: 40px;
+}
+
+#projects p {
+    color: #ddd;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 1.25em;
+}
+
+#projects h2 {
+    background-color: #111;
+    max-width: 300px;
+    color: #f00;
+    margin: 0 auto 10px auto;
+    text-align: center;
+    justify-content: center;
+}
+
+#projects hr {
+    border: 0;
+    border-top: 2px solid rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.project h3 {
+    color: #fff;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #f00;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.project a {
+    background-color: #f00; /* Red background for link button */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.project a:hover {
+    background-color: #cc0000;
+}
+
 
 /* Contact Information Section */
 #contact-info {
     margin-top: 40px;
-    text-align: left;
 }
 
 #contact-info h2 {
+    background-color: #111;
+    max-width: 300px;
     color: #f00;
-    margin-bottom: 10px;
+    margin: 0 auto 10px auto;
+    text-align: center;
+    justify-content: center;
 }
 
 #contact-info hr {

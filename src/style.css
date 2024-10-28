@@ -33,8 +33,8 @@ header nav ul {
 }
 
 header nav ul li {
-    margin: 0 15px;
     font-size: 18px;
+    margin: 0 50px 0 50px; 
 }
 
 header nav ul li a {
@@ -48,6 +48,7 @@ header nav ul li a:hover {
     color: #fff;
     border-bottom: #f00 1px solid;
     display: inline-block;
+    margin-bottom: -1px;
 }
 
 /* Hero Section */
@@ -260,7 +261,7 @@ h4 {
 
 #contact-info hr {
     border: 0;
-    border-top: 2px solid #f00;
+    border-top: 2px solid rgb(255, 255, 255);
     margin-bottom: 20px;
 }
 

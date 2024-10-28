@@ -61,15 +61,15 @@ header nav ul li a:hover {
 
 .hero-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
 }
 
 /* Styling for the Placeholder Image */
 .hero-content img {
-    max-width: 200px;
+    max-width: 250px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: block;
 }
 
 /* Styling for the Hero Heading */
@@ -77,6 +77,8 @@ header nav ul li a:hover {
     color: #f00;
     font-size: 2.5em;
     line-height: 1.2;
+    display: flex;
+    margin: auto;
 }
 
 .hero-content h3 {

@@ -75,7 +75,8 @@ header nav ul li a:hover {
 .info-card-content {
     display: flex;
     align-items: center;
-    gap: 20px; /* Space between image and text */
+    gap: 20px;
+    /* Space between image and text */
 }
 
 /* Profile Image Styling */
@@ -97,6 +98,12 @@ header nav ul li a:hover {
     margin: 5px 0;
 }
 
+/* Contact Button Styling */
+.contact-button {
+    margin: auto;
+    display: flex;
+}
+
 .contact-button button {
     background-color: #f00;
     color: #fff;
@@ -115,4 +122,68 @@ header nav ul li a:hover {
 
 .contact-button button:hover {
     background-color: #cc0000;
+}
+
+/* About Me Section */
+#about {
+    background-color: #222;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+#about h2 {
+    color: #f00;
+    margin-bottom: 15px;
+    border-bottom: 2px solid white;
+}
+
+#about .subsection {
+    margin-top: 20px;
+}
+
+#about h2 {
+    color: #f00;
+    /* Red for main section header */
+    margin-bottom: 15px;
+}
+
+#about h4 {
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f00; 
+    padding-bottom: 5px;
+}
+
+#about p {
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+#about ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+
+#about h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f00;
+    padding-bottom: 5px;
+}
+
+#about p {
+    color: #ddd;
+}
+
+.profile-pic {
+    margin-top: 20px;
+    border-radius: 50%;
+    max-width: 150px;
+    border: 3px solid #f00;
 }

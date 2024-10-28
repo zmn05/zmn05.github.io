@@ -1,0 +1,44 @@
+/* General style reset for all pages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General style for body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
+
+/* General style for header */
+header {
+    background-color: #111;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+header nav ul li a {
+    color: #f00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #fff;
+}

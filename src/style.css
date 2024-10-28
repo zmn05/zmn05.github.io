@@ -52,8 +52,11 @@ header nav ul li a:hover {
 
 /* Hero Section */
 #hero {
-    margin-top: 40px;
+    margin: auto;
     padding-top: 40px;
+    width: 85%;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-content {
@@ -163,6 +166,7 @@ header nav ul li a:hover {
     color: #f00;
     margin-bottom: 15px;
     border-bottom: 2px solid white;
+    text-align: center;
 }
 
 #about .subsection {
@@ -238,4 +242,54 @@ h4 {
     color: #ddd;
     margin-bottom: 15px;
     line-height: 1.6;
+}
+
+
+/* Contact Information Section */
+#contact-info {
+    margin-top: 40px;
+    text-align: left;
+}
+
+#contact-info h2 {
+    color: #f00;
+    margin-bottom: 10px;
+}
+
+#contact-info hr {
+    border: 0;
+    border-top: 2px solid #f00;
+    margin-bottom: 20px;
+}
+
+.contact-details p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #f00;
+    text-decoration: none;
+    text-align: center;
+}
+
+.contact-details a:hover {
+    color: #fff;
+}
+
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    gap: 40px;
+}
+
+.social-icon {
+    text-align: center;
+}
+
+.social-icon img {
+    max-width: 60px;
+    margin-bottom: 10px;
+}
+
+.social-icon p {
+    color: #ddd;
+    font-size: 0.9em;
 }

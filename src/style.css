@@ -264,7 +264,7 @@ h4 {
 
 .contact-details p {
     font-size: 1.2em;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
     color: #f00;
     text-decoration: none;
     text-align: center;
@@ -286,7 +286,12 @@ h4 {
 
 .social-icon img {
     max-width: 60px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
 }
 
 .social-icon p {

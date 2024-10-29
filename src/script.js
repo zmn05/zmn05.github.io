@@ -44,3 +44,43 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 // Theme Switcher
+const themeSwitcher = document.getElementById('theme-switch');
+
+if (themeSwitcher) {
+    themeSwitcher.addEventListener('click', function (event) {
+        event.preventDefault();
+        // Toggle light mode
+        document.body.classList.toggle('light-theme');
+
+        // Toggle red to blue switch
+        const elementsToToggle = document.querySelectorAll('.red-theme');
+        elementsToToggle.forEach(element => {
+            if (document.body.classList.contains('light-theme')) {
+                element.classList.remove('red-theme');
+                element.classList.add('blue-theme');
+            } else {
+                element.classList.remove('blue-theme');
+                element.classList.add('red-theme');
+            }
+        });
+
+        // Save the user's preference to localStorage
+        const currentTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+        localStorage.setItem('theme', currentTheme);
+    });
+
+
+}
+
+// Set initial theme based on user's saved preference
+window.addEventListener('DOMContentLoaded', function () {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme && savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        const elementsToToggle = document.querySelectorAll('.red-theme');
+        elementsToToggle.forEach(element => {
+            element.classList.remove('red-theme');
+            element.classList.add('blue-theme');
+        });
+    }
+});

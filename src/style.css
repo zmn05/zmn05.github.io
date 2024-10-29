@@ -1,0 +1,453 @@
+/* General style reset for all pages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* General style for body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
+
+/* General style for header */
+header {
+    background-color: #111;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    font-size: 18px;
+    margin: 0 50px 0 50px;
+}
+
+header nav ul li a {
+    color: #f00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #fff;
+    border-bottom: #f00 1px solid;
+    display: inline-block;
+    margin-bottom: -1px;
+}
+
+/* Hero Section */
+#hero {
+    margin: auto;
+    padding-top: 40px;
+    width: 85%;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+/* Styling for the Placeholder Image */
+.hero-content img {
+    max-width: 250px;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Styling for the Hero Heading */
+.hero-content h1 {
+    color: #f00;
+    font-size: 2.5em;
+    line-height: 1.2;
+    display: flex;
+    margin: auto 0 auto 45px;
+}
+
+.hero-content h3 {
+    color: #f00;
+    margin-top: 20px;
+}
+
+/* Info Card Section */
+#info-card {
+    background-color: #222;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+    text-align: left;
+}
+
+.info-card-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Profile Image Styling */
+.profile-image img {
+    max-width: 150px;
+    border: 1.5px solid #f00;
+}
+
+/* Profile Details Styling */
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Role Badges Styling */
+.role-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.role-badge {
+    background-color: rgb(136, 15, 15);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 0.9em;
+    display: inline-block;
+}
+
+/* Contact Button Styling */
+.contact-button {
+    margin-top: 20px;
+}
+
+.contact-button a {
+    background-color: #f00;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.contact-button a:hover {
+    background-color: #cc0000;
+}
+
+
+/* About Me Section */
+#about {
+    background-color: #222;
+    padding: 30px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+#about h2 {
+    color: #f00;
+    margin-bottom: 15px;
+    border-bottom: 2px solid white;
+    text-align: center;
+}
+
+#about .subsection {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#about h2 {
+    color: #f00;
+    /* Red for main section header */
+    margin-bottom: 15px;
+}
+
+#about h4 {
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f00;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+#about p {
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+#about ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+
+#about h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f00;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+#about p {
+    color: #ddd;
+}
+
+.profile-pic {
+    margin-top: 20px;
+    border-radius: 50%;
+    max-width: 150px;
+    border: 3px solid #f00;
+}
+
+/* Experience Subsection */
+#experience {
+    margin-top: 20px;
+}
+
+#experience h3,
+h4 {
+    color: white;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f00;
+    display: inline-block;
+}
+
+#experience h4 {
+    margin-top: 20px;
+}
+
+#experience p {
+    color: #ddd;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#experience p a {
+    color: #f00;
+    text-decoration: none;
+    border-bottom: #f00 1px solid;
+    transition: color 0.3s;
+}
+
+#experience p a:hover {
+    color: #cc0000;
+}
+
+/* Projects Section */
+#projects {
+    margin-top: 40px;
+}
+
+#projects p {
+    color: #ddd;
+    margin: auto;
+    line-height: 1.6;
+    font-size: 1.15em;
+}
+
+#projects h2 {
+    background-color: #111;
+    max-width: 300px;
+    color: #f00;
+    margin: 0 auto 10px auto;
+    text-align: center;
+    justify-content: center;
+}
+
+#projects hr {
+    border: 0;
+    border-top: 2px solid rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.project h3 {
+    color: #fff;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #f00;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.project a {
+    background-color: #f00;
+    color: #fff;
+    margin: auto;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    max-width: 110px;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.projects a:hover {
+    background-color: #cc0000;
+}
+
+
+/* Contact Information Section */
+#contact-info {
+    margin-top: 40px;
+}
+
+#contact-info h2 {
+    background-color: #111;
+    max-width: 450px;
+    color: #f00;
+    margin: 0 auto 10px auto;
+    text-align: center;
+
+}
+
+#contact-info hr {
+    border: 0;
+    border-top: 2px solid rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+.contact-details p {
+    font-size: 1.2em;
+    margin-bottom: 45px;
+    color: #f00;
+    text-decoration: none;
+    text-align: center;
+}
+
+.contact-details a:hover {
+    color: #fff;
+}
+
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    gap: 40px;
+}
+
+.social-icon {
+    text-align: center;
+}
+
+.social-icon img {
+    max-width: 60px;
+    margin-bottom: 5px;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
+.social-icon p {
+    color: #ddd;
+    font-size: 0.9em;
+}
+
+/* Light/Dark Theme Styles */
+body.light-theme {
+    background-color: #fff;
+    color: #000;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Header and About Me Section Background for Light Theme */
+body.light-theme header,
+body.light-theme #about {
+    background-color: #f0f0f0;
+}
+
+/* Red and Blue Theme Styles */
+.red-theme {
+    color: #f00 !important;
+}
+
+.blue-theme {
+    color: #00f !important;
+}
+
+/* Light Theme Styles */
+body.light-theme #about p {
+    color: #000;
+}
+
+body.light-theme ul li {
+    color: #000;
+}
+
+body.light-theme #info-card {
+    background-color: #e0e0e0;
+    color: #000;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.4);
+}
+
+body.light-theme .contact-button a {
+    background-color: #00f;
+    color: #fff;
+}
+
+body.light-theme .role-badge {
+    background-color: #005f99;
+    color: #fff;
+}
+
+body.light-theme #about {
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.4);
+}
+
+/* Theme Switcher Link */
+#theme-switcher {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(125, 4, 4);
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+body.light-theme #theme-switcher {
+    background-color: rgb(11, 142, 213);
+    color: #000000;
+}

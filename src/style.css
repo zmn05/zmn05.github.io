@@ -317,11 +317,11 @@ h4 {
 
 #contact-info h2 {
     background-color: #111;
-    max-width: 300px;
+    max-width: 450px;
     color: #f00;
     margin: 0 auto 10px auto;
     text-align: center;
-    justify-content: center;
+
 }
 
 #contact-info hr {

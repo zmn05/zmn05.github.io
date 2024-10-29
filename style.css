@@ -51,6 +51,17 @@ header nav ul li a:hover {
     margin-bottom: -1px;
 }
 
+/* Notice Bar */
+.notice-bar {
+    color: #8d8989;
+    text-align: center;
+    margin: 10px auto auto auto;
+    font-size: 0.75em;
+    font-style: italic;
+    position: relative;
+    width: 75%;
+}
+
 /* Hero Section */
 #hero {
     margin: auto;

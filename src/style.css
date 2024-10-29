@@ -128,7 +128,7 @@ header nav ul li a:hover {
     background-color: rgb(136, 15, 15);
     padding: 5px 10px;
     border-radius: 5px;
-    color: #fff;
+    color: #ffffff;
     font-size: 0.9em;
     display: inline-block;
 }
@@ -395,11 +395,6 @@ body.light-theme #about {
     background-color: #f0f0f0;
 }
 
-/* Header and About Me Section for Dark Theme (optional, depending on current state) */
-header, #about {
-    background-color: #111;
-}
-
 /* Red and Blue Theme Styles */
 .red-theme {
     color: #f00 !important;
@@ -409,12 +404,41 @@ header, #about {
     color: #00f !important;
 }
 
+/* Light Theme Styles */
+body.light-theme #about p {
+    color: #000;
+}
+
+body.light-theme ul li {
+    color: #000;
+}
+
+body.light-theme #info-card {
+    background-color: #e0e0e0;
+    color: #000;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.4);
+}
+
+body.light-theme .contact-button a {
+    background-color: #00f;
+    color: #fff;
+}
+
+body.light-theme .role-badge {
+    background-color: #005f99;
+    color: #fff;
+}
+
+body.light-theme #about {
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.4);
+}
+
 /* Theme Switcher Link */
 #theme-switcher {
     position: fixed;
     top: 10px;
     right: 10px;
-    background-color: #f00;
+    background-color: rgb(125, 4, 4);
     color: #fff;
     padding: 10px;
     cursor: pointer;
@@ -425,5 +449,5 @@ header, #about {
 
 body.light-theme #theme-switcher {
     background-color: rgb(11, 142, 213);
-    color: #fff;
+    color: #000000;
 }

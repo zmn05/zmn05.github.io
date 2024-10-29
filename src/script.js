@@ -84,17 +84,3 @@ window.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
-
-// Set initial theme based on user's saved preference
-window.addEventListener('DOMContentLoaded', function () {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme && savedTheme === 'light') {
-        document.body.classList.add('light-theme');
-        const elementsToToggle = document.querySelectorAll('.red-theme');
-        elementsToToggle.forEach(element => {
-            element.classList.remove('red-theme');
-            element.classList.add('blue-theme');
-        });
-    }
-});

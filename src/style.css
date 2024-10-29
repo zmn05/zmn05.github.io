@@ -254,9 +254,9 @@ h4 {
 
 #projects p {
     color: #ddd;
-    margin-bottom: 15px;
+    margin: auto;
     line-height: 1.6;
-    font-size: 1.25em;
+    font-size: 1.15em;
 }
 
 #projects h2 {
@@ -296,9 +296,11 @@ h4 {
 .project a {
     background-color: #f00;
     color: #fff;
+    margin: auto;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+    max-width: 110px;
     transition: background-color 0.3s;
     display: inline-block;
 }

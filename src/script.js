@@ -55,7 +55,7 @@ if (themeSwitcher) {
         document.body.classList.toggle('light-theme');
 
         // Toggle red to blue for theme switch
-        const elementsToToggle = document.querySelectorAll('.red-theme');
+        const elementsToToggle = document.querySelectorAll('.red-theme, nav a, h1, h2, h3, h4, .role-badge, #experience a');
         elementsToToggle.forEach(element => {
             if (document.body.classList.contains('light-theme')) {
                 element.classList.remove('red-theme');

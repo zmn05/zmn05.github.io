@@ -377,3 +377,19 @@ h4 {
     color: #ddd;
     font-size: 0.9em;
 }
+
+/* Theme Switch */
+.theme-button {
+    display: inline-block;
+    background-color: #f00;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-button:hover {
+    background-color: #cc0000;
+}

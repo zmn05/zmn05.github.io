@@ -41,3 +41,6 @@ window.addEventListener('DOMContentLoaded', function () {
         typeText();
     }
 })
+
+
+// Theme Switcher

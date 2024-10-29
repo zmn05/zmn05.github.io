@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('DOMContentLoaded', function () {
     const welcomeElement = document.getElementById('welcome-text');
     const welcomeText = 'Welcome to My Website!';
-    let charIndex = 0;
+    let charIndex = 0; // Variable to keep track of character index
 
     // Typing effect function to show one character at a time
     function typeText() {
@@ -55,12 +55,14 @@ if (themeSwitcher) {
         document.body.classList.toggle('light-theme');
 
         // Toggle red to blue for theme switch
-        const elementsToToggle = document.querySelectorAll('.red-theme, nav a, h1, h2, h3, h4, .role-badge, #experience a');
+        const elementsToToggle = document.querySelectorAll('.red-theme, nav a, h1, h2, h3, h4, #experience a');
         elementsToToggle.forEach(element => {
+            // Check if the body has the light theme, if so, switch to blue
             if (document.body.classList.contains('light-theme')) {
                 element.classList.remove('red-theme');
                 element.classList.add('blue-theme');
             } else {
+                // If the body doesn't have the light theme, switch back to red
                 element.classList.remove('blue-theme');
                 element.classList.add('red-theme');
             }

@@ -79,7 +79,7 @@ header nav ul li a:hover {
     font-size: 2.5em;
     line-height: 1.2;
     display: flex;
-    margin: auto;
+    margin: auto 0 auto 45px;
 }
 
 .hero-content h3 {

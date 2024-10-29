@@ -44,15 +44,17 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 // Theme Switcher
-const themeSwitcher = document.getElementById('theme-switch');
+const themeSwitcher = document.getElementById('theme-switcher');
 
+// Event listener for theme switching link
 if (themeSwitcher) {
     themeSwitcher.addEventListener('click', function (event) {
-        event.preventDefault();
-        // Toggle light mode
+        event.preventDefault(); // Prevent the default action for the anchor tag
+
+        // Toggle the theme on the body element
         document.body.classList.toggle('light-theme');
 
-        // Toggle red to blue switch
+        // Toggle red to blue for theme switch
         const elementsToToggle = document.querySelectorAll('.red-theme');
         elementsToToggle.forEach(element => {
             if (document.body.classList.contains('light-theme')) {
@@ -68,9 +70,21 @@ if (themeSwitcher) {
         const currentTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
         localStorage.setItem('theme', currentTheme);
     });
-
-
 }
+
+// Set initial theme based on user's saved preference
+window.addEventListener('DOMContentLoaded', function () {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme && savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        const elementsToToggle = document.querySelectorAll('.red-theme');
+        elementsToToggle.forEach(element => {
+            element.classList.remove('red-theme');
+            element.classList.add('blue-theme');
+        });
+    }
+});
+
 
 // Set initial theme based on user's saved preference
 window.addEventListener('DOMContentLoaded', function () {

@@ -1,88 +1,184 @@
-// Time Based Greeting
-window.addEventListener('DOMContentLoaded', function () {
-    const greetingElement = document.getElementById('greeting');
-    const currentHour = new Date().getHours();
+/**
+ * Portfolio Script
+ * - Time-based greeting
+ * - Typing animation for name
+ * - Theme toggle (dark/light) with localStorage persistence
+ * - Scroll-triggered animations (IntersectionObserver)
+ * - Mobile navigation toggle
+ * - Active nav link highlighting on scroll
+ */
 
-    // Initialize greeting message
-    let greetingMessage;
+(function () {
+    'use strict';
 
-    // Determine the greeting based on the current hour
-    if (currentHour < 12) {
-        greetingMessage = 'Good Morning,';
-    } else if (currentHour < 17) {
-        greetingMessage = 'Good Afternoon,';
-    } else {
-        greetingMessage = 'Good Evening,';
+    // ========================================
+    // Time-Based Greeting
+    // ========================================
+    function setGreeting() {
+        const el = document.getElementById('greeting');
+        if (!el) return;
+
+        const hour = new Date().getHours();
+        let msg;
+        if (hour < 12) msg = 'Good morning,';
+        else if (hour < 17) msg = 'Good afternoon,';
+        else msg = 'Good evening,';
+
+        el.textContent = msg;
     }
 
-    // Set greeting to precede welcome message
-    if (greetingElement) {
-        greetingElement.textContent = greetingMessage;
-    }
-});
+    // ========================================
+    // Typing Animation
+    // ========================================
+    function typeWelcome() {
+        const el = document.getElementById('welcome-text');
+        if (!el) return;
 
-// Animate Welcome Text
-window.addEventListener('DOMContentLoaded', function () {
-    const welcomeElement = document.getElementById('welcome-text');
-    const welcomeText = 'Welcome to My Website!';
-    let charIndex = 0; // Variable to keep track of character index
+        const text = "I'm Prottoy Zaman.";
+        let i = 0;
 
-    // Typing effect function to show one character at a time
-    function typeText() {
-        if (charIndex < welcomeText.length) {
-            welcomeElement.textContent += welcomeText.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeText, 105); // Adjust typing speed here
-        }
-    }
-
-    // Call the typing effect function
-    if (welcomeElement) {
-        typeText();
-    }
-})
-
-
-// Theme Switcher
-const themeSwitcher = document.getElementById('theme-switcher');
-
-// Event listener for theme switching link
-if (themeSwitcher) {
-    themeSwitcher.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default action for the anchor tag
-
-        // Toggle the theme on the body element
-        document.body.classList.toggle('light-theme');
-
-        // Toggle red to blue for theme switch
-        const elementsToToggle = document.querySelectorAll('.red-theme, nav a, h1, h2, h3, h4, #experience a');
-        elementsToToggle.forEach(element => {
-            // Check if the body has the light theme, if so, switch to blue
-            if (document.body.classList.contains('light-theme')) {
-                element.classList.remove('red-theme');
-                element.classList.add('blue-theme');
+        function type() {
+            if (i < text.length) {
+                el.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, 80);
             } else {
-                // If the body doesn't have the light theme, switch back to red
-                element.classList.remove('blue-theme');
-                element.classList.add('red-theme');
+                // Remove blinking cursor after typing is done
+                setTimeout(() => el.classList.add('typing-done'), 1500);
             }
-        });
+        }
 
-        // Save the user's preference to localStorage
-        const currentTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
-        localStorage.setItem('theme', currentTheme);
-    });
-}
+        type();
+    }
 
-// Set initial theme based on user's saved preference
-window.addEventListener('DOMContentLoaded', function () {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme && savedTheme === 'light') {
-        document.body.classList.add('light-theme');
-        const elementsToToggle = document.querySelectorAll('.red-theme');
-        elementsToToggle.forEach(element => {
-            element.classList.remove('red-theme');
-            element.classList.add('blue-theme');
+    // ========================================
+    // Theme Toggle
+    // ========================================
+    function initTheme() {
+        const toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+
+        const html = document.documentElement;
+
+        // Restore saved theme
+        const saved = localStorage.getItem('theme');
+        if (saved) {
+            html.setAttribute('data-theme', saved);
+        }
+
+        toggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
         });
     }
-});
+
+    // ========================================
+    // Mobile Navigation
+    // ========================================
+    function initMobileNav() {
+        const toggle = document.getElementById('nav-toggle');
+        const links = document.getElementById('nav-links');
+        if (!toggle || !links) return;
+
+        toggle.addEventListener('click', () => {
+            const isOpen = links.classList.toggle('open');
+            toggle.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close menu when a link is clicked
+        links.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                links.classList.remove('open');
+                toggle.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
+    // ========================================
+    // Active Nav Highlighting on Scroll
+    // ========================================
+    function initActiveNav() {
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        if (!sections.length || !navLinks.length) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.toggle(
+                                'active',
+                                link.getAttribute('href') === `#${id}`
+                            );
+                        });
+                    }
+                });
+            },
+            {
+                rootMargin: '-30% 0px -70% 0px',
+            }
+        );
+
+        sections.forEach(section => observer.observe(section));
+    }
+
+    // ========================================
+    // Scroll Animations (IntersectionObserver)
+    // ========================================
+    function initScrollAnimations() {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        if (!elements.length) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Add a small stagger delay for elements in view
+                        entry.target.style.transitionDelay = `${index * 0.05}s`;
+                        entry.target.classList.add('visible');
+
+                        // If this contains a skills grid, animate its children
+                        const grid = entry.target.querySelector('.skills-grid');
+                        if (grid) {
+                            animateSkillItems(grid);
+                        }
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px',
+            }
+        );
+
+        elements.forEach(el => observer.observe(el));
+    }
+
+    function animateSkillItems(grid) {
+        const items = grid.querySelectorAll('.skill-item');
+        items.forEach((item, i) => {
+            item.style.transitionDelay = `${i * 0.06}s`;
+        });
+        grid.classList.add('animate-children');
+    }
+
+    // ========================================
+    // Init on DOM Ready
+    // ========================================
+    document.addEventListener('DOMContentLoaded', () => {
+        setGreeting();
+        typeWelcome();
+        initTheme();
+        initMobileNav();
+        initActiveNav();
+        initScrollAnimations();
+    });
+})();

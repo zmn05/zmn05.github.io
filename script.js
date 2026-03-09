@@ -2,7 +2,6 @@
  * Portfolio Script
  * - Time-based greeting
  * - Typing animation for name
- * - Theme toggle (dark/light) with localStorage persistence
  * - Scroll-triggered animations (IntersectionObserver)
  * - Mobile navigation toggle
  * - Active nav link highlighting on scroll
@@ -35,6 +34,14 @@
         if (!el) return;
 
         const text = "I'm Prottoy Zaman.";
+
+        // Skip animation on repeat visits within the same session
+        if (sessionStorage.getItem('typed')) {
+            el.textContent = text;
+            el.classList.add('typing-done');
+            return;
+        }
+
         let i = 0;
 
         function type() {
@@ -43,35 +50,12 @@
                 i++;
                 setTimeout(type, 80);
             } else {
-                // Remove blinking cursor after typing is done
+                sessionStorage.setItem('typed', '1');
                 setTimeout(() => el.classList.add('typing-done'), 1500);
             }
         }
 
         type();
-    }
-
-    // ========================================
-    // Theme Toggle
-    // ========================================
-    function initTheme() {
-        const toggle = document.getElementById('theme-toggle');
-        if (!toggle) return;
-
-        const html = document.documentElement;
-
-        // Restore saved theme
-        const saved = localStorage.getItem('theme');
-        if (saved) {
-            html.setAttribute('data-theme', saved);
-        }
-
-        toggle.addEventListener('click', () => {
-            const current = html.getAttribute('data-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        });
     }
 
     // ========================================
@@ -176,7 +160,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         setGreeting();
         typeWelcome();
-        initTheme();
         initMobileNav();
         initActiveNav();
         initScrollAnimations();

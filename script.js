@@ -90,26 +90,32 @@
         const navLinks = document.querySelectorAll('.nav-link');
         if (!sections.length || !navLinks.length) return;
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
-                            link.classList.toggle(
-                                'active',
-                                link.getAttribute('href') === `#${id}`
-                            );
-                        });
-                    }
-                });
-            },
-            {
-                rootMargin: '-30% 0px -70% 0px',
-            }
-        );
+        function setActive() {
+            const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
 
-        sections.forEach(section => observer.observe(section));
+            // Find the section whose top is closest to the top of the viewport
+            // but hasn't scrolled past the middle yet
+            let activeId = null;
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                // Section is considered active when its top half is in the upper half of the viewport
+                if (rect.top <= viewportHeight * 0.4) {
+                    activeId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.toggle(
+                    'active',
+                    activeId !== null && link.getAttribute('href') === `#${activeId}`
+                );
+            });
+        }
+
+        window.addEventListener('scroll', setActive, { passive: true });
+        setActive(); // Run once on load
     }
 
     // ========================================

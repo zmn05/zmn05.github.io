@@ -715,7 +715,7 @@ body {
    ============================================ */
 #footer {
     border-top: 1px solid var(--border);
-    padding: 48px 24px;
+    padding: 48px 24px 55px;
     text-align: center;
     transition: border-color 0.3s;
 }

@@ -695,6 +695,7 @@ body {
 .contact-container {
     text-align: center;
     max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-text {
@@ -709,6 +710,7 @@ body {
     gap: 12px;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 /* ============================================

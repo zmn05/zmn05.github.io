@@ -398,8 +398,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 8px;
+    box-sizing: border-box;
+    height: 100px;
     padding: 20px 12px;
+    overflow: hidden;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -414,6 +418,21 @@ body {
 
 .skill-item i {
     font-size: 2rem;
+}
+
+.ai-skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 420px;
+}
+
+.skill-item .skill-logo {
+    display: block;
+    flex: 0 0 2rem;
+    width: 2rem;
+    height: 2rem;
+    max-width: 2rem;
+    max-height: 2rem;
+    object-fit: contain;
 }
 
 .skill-item span {
@@ -811,6 +830,10 @@ body {
 
     .skills-grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    .ai-skills-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 

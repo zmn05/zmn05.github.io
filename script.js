@@ -33,7 +33,7 @@
         const el = document.getElementById('welcome-text');
         if (!el) return;
 
-        const text = "I'm Prottoy Zaman.";
+        const text = "I'm Prottoy (Pro-Toy) Zaman.";
 
         // Skip animation on repeat visits within the same session
         if (sessionStorage.getItem('typed')) {

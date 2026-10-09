@@ -1,6 +1,6 @@
 # zmn05.github.io
 
-Portfolio website for Prottoy Zaman, a Simon Fraser University Computing Science student and full-stack developer. The site covers professional experience, projects, technical skills, and education.
+Portfolio website for Prottoy Zaman, a Simon Fraser University Computing Science student and software developer. The site covers professional experience, projects, technical skills, and education.
 
 ## License
 

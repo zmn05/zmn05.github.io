@@ -387,14 +387,17 @@ body {
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
     max-width: 700px;
     margin: 0 auto;
 }
 
 .skill-item {
+    flex: 1 1 110px;
+    max-width: 128px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -421,7 +424,6 @@ body {
 }
 
 .ai-skills-grid {
-    grid-template-columns: repeat(3, 1fr);
     max-width: 420px;
 }
 
@@ -827,14 +829,6 @@ body {
     .hero-name {
         font-size: 2rem;
     }
-
-    .skills-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .ai-skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 
 /* ============================================
@@ -913,7 +907,6 @@ body {
 
     /* Skills */
     .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
         gap: 12px;
     }
 
@@ -961,7 +954,6 @@ body {
    ============================================ */
 @media (max-width: 480px) {
     .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
         gap: 8px;
     }
 
